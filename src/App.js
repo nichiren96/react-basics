@@ -1,20 +1,27 @@
 import "./App.css";
 
-const lakeList = [
-  { id: "1", name: "Echo", trailhead: "Echo" },
-  { id: "2", name: "Maud", trailhead: "Wrights" },
-  { id: "3", name: "Velma", trailhead: "Bayview" },
-];
+function Lake({ name }) {
+  return <h1>Visit {name} !</h1>;
+}
 
-function LakeList({ lakes }) {
+function SkiResort({ name }) {
   return (
     <div>
-      {lakes.map((lake) => (
-        <div key={lake.id}>
-          <h2>{lake.name}</h2>
-          <p>Accessed by: {lake.trailhead}</p>
-        </div>
-      ))}
+      <h1>Visit {name} !</h1>
+    </div>
+  );
+}
+
+function Display({ season }) {
+  return (
+    <div>
+      {season === "summer" ? (
+        <Lake name="Jenny Lake" />
+      ) : season === "winter" ? (
+        <SkiResort name="JHMMR" />
+      ) : (
+        <h1>Comme back in winter or summer</h1>
+      )}
     </div>
   );
 }
@@ -22,7 +29,7 @@ function LakeList({ lakes }) {
 function App() {
   return (
     <div className="App">
-      <LakeList lakes={lakeList} />
+      <Display season="winter" />
     </div>
   );
 }
