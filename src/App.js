@@ -1,19 +1,15 @@
 import "./App.css";
 
-function Hello({ library, message, number }) {
-  return (
-    <div>
-      <h1>Welcome to {library}</h1>
-      <p>{message}</p>
-      <p>{number} Props Total</p>
-    </div>
-  );
+function Lake({ name }) {
+  return <h1>{name}</h1>;
 }
 
 function App() {
   return (
     <div className="App">
-      <Hello library="React" message="It's really cool" number={3} />
+      <Lake name="Lake Taho" />
+      <Lake name="Angora Lake" />
+      <Lake name="Shirley Lake" />
     </div>
   );
 }
