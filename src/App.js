@@ -13,7 +13,7 @@ function Hello({ library, message, number }) {
 function App() {
   return (
     <div className="App">
-      <Hello library="ReactJS" message="It's really cool" number={3} />
+      <Hello library="React" message="It's really cool" number={3} />
     </div>
   );
 }
