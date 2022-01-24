@@ -12,24 +12,19 @@ function SkiResort({ name }) {
   );
 }
 
-function Display({ season }) {
+function Display() {
   return (
-    <div>
-      {season === "summer" ? (
-        <Lake name="Jenny Lake" />
-      ) : season === "winter" ? (
-        <SkiResort name="JHMMR" />
-      ) : (
-        <h1>Comme back in winter or summer</h1>
-      )}
-    </div>
+    <>
+      <Lake name="Lake Taho" />
+      <SkiResort name="Ophir Resort" />
+    </>
   );
 }
 
 function App() {
   return (
     <div className="App">
-      <Display season="winter" />
+      <Display />
     </div>
   );
 }
