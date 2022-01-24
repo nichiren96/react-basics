@@ -1,15 +1,21 @@
 import "./App.css";
 
-function Lake({ name }) {
-  return <h1>{name}</h1>;
+const lakeList = ["Echo Lake", "Maud Lake", "Cascade Lake"];
+
+function LakeList({ lakes }) {
+  return (
+    <ol>
+      {lakes.map((lake) => (
+        <li>{lake}</li>
+      ))}
+    </ol>
+  );
 }
 
 function App() {
   return (
     <div className="App">
-      <Lake name="Lake Taho" />
-      <Lake name="Angora Lake" />
-      <Lake name="Shirley Lake" />
+      <LakeList lakes={lakeList} />
     </div>
   );
 }
