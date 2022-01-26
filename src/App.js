@@ -1,37 +1,20 @@
-import { useState, useEffect } from "react";
+import { useReducer } from "react";
 
 import "./App.css";
 
-function UserItem({ name, mail }) {
+function Checkbox() {
+  const [checked, toggle] = useReducer((checked) => !checked, false);
+
   return (
-    <div>
-      <h2>{name}</h2>
-      <p>{mail}</p>
-    </div>
+    <>
+      <input type="checkbox" value={checked} onChange={toggle} />
+      {checked ? "checked" : "not checked"}
+    </>
   );
 }
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetch(`http://localhost:3001/users`)
-      .then((res) => res.json())
-      .then(setUser)
-      .catch(console.error);
-  }, []);
-
-  if (user) {
-    return (
-      <div className="App">
-        {user.map((item, index) => (
-          <UserItem key={index} name={item.name} mail={item.email} />
-        ))}
-      </div>
-    );
-  }
-
-  return null;
+  return <Checkbox />;
 }
 
 export default App;
