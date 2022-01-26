@@ -1,20 +1,12 @@
-import { useReducer } from "react";
-
 import "./App.css";
-
-function Checkbox() {
-  const [checked, toggle] = useReducer((checked) => !checked, false);
-
-  return (
-    <>
-      <input type="checkbox" value={checked} onChange={toggle} />
-      {checked ? "checked" : "not checked"}
-    </>
-  );
-}
+import { HomePage } from "./pages/Home";
 
 function App() {
-  return <Checkbox />;
+  return (
+    <div className="App">
+      <HomePage />
+    </div>
+  );
 }
 
 export default App;
