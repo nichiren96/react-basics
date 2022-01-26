@@ -1,30 +1,16 @@
+import { useState } from "react";
+
 import "./App.css";
 
-function Lake({ name }) {
-  return <h1>Visit {name} !</h1>;
-}
-
-function SkiResort({ name }) {
-  return (
-    <div>
-      <h1>Visit {name} !</h1>
-    </div>
-  );
-}
-
-function Display() {
-  return (
-    <>
-      <Lake name="Lake Taho" />
-      <SkiResort name="Ophir Resort" />
-    </>
-  );
-}
-
 function App() {
+  const [status, setStatus] = useState("Open");
+
   return (
     <div className="App">
-      <Display />
+      <h1>Status: {status}</h1>
+      <button onClick={() => setStatus("Open")}>Open</button>
+      <button onClick={() => setStatus("Back in 5")}>Break</button>
+      <button onClick={() => setStatus("Closed")}>Closed</button>
     </div>
   );
 }
