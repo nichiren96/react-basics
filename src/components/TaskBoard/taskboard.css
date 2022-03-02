@@ -1,5 +1,13 @@
 .task-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 250px;
   background-color: whitesmoke;
   box-shadow: 10px 10px 2px grey;
+}
+
+.submitBtn {
+  margin-top: 16px;
 }
